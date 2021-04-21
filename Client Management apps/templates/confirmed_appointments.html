@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Appoinments
+{% endblock %}
+
+{% block main %}
+<h3 class="txt"><i class='fas fa-business-time'></i></i>My Appointments</h3>
+<br>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+            <th>Appointment Date/Time</th>
+            <th>Client Name</th>
+            <th>Email Address</th>
+            <th>Mobile</th>
+            <th>Aparment Size</th>
+            <th>Buget</th>
+            <th>MoveDATE:YYYY-MM-DD</th>
+            <th>WEST/EAST</th>
+            <th>UP/DOWN TOWN</th>
+            <th>Pets</th>
+            <th>Grantor Requirment</th>
+            <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <tr>
+                <td>{{appointment["appt_date"]}}</td>
+                <td>{{appointment["clientname"]}}</td>
+                <td>{{appointment["email"]}}</td>
+                <td>{{appointment["mobile"]}}</td>
+                <td>{{appointment["aptsize"]}}</td>
+                <td>{{appointment["budget"]}}</td>
+                <td>{{appointment["move_date"]}}</td>
+                <td>{{appointment["w_or_e"]}}</td>
+                <td>{{appointment["up_down_town"]}}</td>
+                <td>{{appointment["pets"]}}</td>
+                <td>{{appointment["grantor"]}}</td>
+                <td>{{appointment["note"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

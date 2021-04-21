@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Found
+{% endblock %}
+
+{% block main %}
+    <table class="table table-dark">
+        <thead>
+            <tr>
+            <th>Client Name</th>
+            <th>Email Address</th>
+            <th>Mobile</th>
+            <th>Aparment Size</th>
+            <th>Buget</th>
+            <th>MoveDATE:YYYY-MM-DD</th>
+            <th>WEST/EAST</th>
+            <th>UP/DOWN TOWN</th>
+            <th>Pets</th>
+            <th>Grantor Requirment</th>
+            <th>Note</th>
+            <th>Add Date</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>{{clients}}</td>
+                <td>{{email}}</td>
+                <td>{{mobile}}</td>
+                <td>{{aptsize}}</td>
+                <td>{{budget}}</td>
+                <td>{{movedate}}</td>
+                <td>{{west_east}}</td>
+                <td>{{up_town_town}}</td>
+                <td>{{pets}}</td>
+                <td>{{grantor}}</td>
+                <td>{{note}}</td>
+                <td>{{add}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,108 @@
+
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+.bg
+{
+    background-image:url(../static/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.font
+{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 0.8;
+    color: #e9ecef;
+}
+
+.control
+{
+    height: calc(2.75rem + 2px);
+    border: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 0 0.1rem #f8f9fa;
+}
+
+.b
+{
+    color: #fff;
+    background-color: #495057;
+    border-color:#6c757d;
+    font-weight: 700;
+}
+
+
+.ber
+{
+    border: 1px solid #212529!important;
+
+    padding: 0rem 8.5px;
+}
+
+.alert
+{
+    color: #f8f9fa;
+    background-color: #1d2124;
+    border-radius: 0rem;
+    position: inherit;
+    border: 1px solid #1d2124!important;
+}
+
+.navbar-dark .navbar-nav .nav-link
+{
+    color: #ffffff;
+    display: flex;
+}
+
+
+.txt
+{
+    text-decoration:none;
+}
+
+
+.h:hover {
+  background-color: #000;
+}
+
+.navbar-nav {
+
+    padding-left: 26px;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 19px;
+    padding-left: 19px;
+}
+
+.bc
+{
+    color:#212529;
+}
+
+/*###############################################
+/* Add a black background color to the top navigation */

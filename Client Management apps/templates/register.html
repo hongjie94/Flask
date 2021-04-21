@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 class"wt"><i class="fa fa-user"></i>Register</h1>
+<br>
+
+
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input id="input_username" autocomplete="off" autofocus class="form-control control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input id="input_password" class="form-control control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input id="input_password" class="form-control control" name="confirmation" placeholder="Confirm Password" type="password">
+        </div>
+        <button id="button" class="btn btn-dark b bb" type="submit">Register</button>
+        <script>
+            //username spaces validaion
+            document.querySelector("#input_username").onkeyup = function() {
+                if (document.querySelector("#input_username").value.trim()==="") {
+                    document.querySelector("#button").disabled = true;
+                } else {
+                    document.querySelector("#button").disabled = false;
+                }
+            }
+            //password spaces validaion
+             document.querySelector("#input_password").onkeyup = function() {
+                if (document.querySelector("#input_password").value.trim()==="") {
+                    document.querySelector("#button").disabled = true;
+                } else {
+                    document.querySelector("#button").disabled = false;
+                }
+            }
+        </script>
+    </form>
+{% endblock %}
