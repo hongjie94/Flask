@@ -5,10 +5,8 @@
 {% endblock %}
 
 {% block main %}
-<h2><i class='fas fa-user-plus'></i>Add New Clients</h2></2>
-<br>
-
-
+<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">	
+<h2 class="head-sub">Add New Clients</h2>
  <form action="/add" method="post">
         <div class="form-group">
             <input autocomplete="off" autofocus class="form-control" name="clientname" placeholder="Client Name" type="text">
@@ -47,4 +45,5 @@
 
         <button class="btn btn-dark" type="submit">Add Client</button>
     </form>
+    </div>    
 {% endblock %}

@@ -1,15 +1,13 @@
 import requests
 import urllib.parse
-from flask import redirect, render_template, request, session
+from flask import redirect, render_template, session
 from functools import wraps
 
-
 def erro(message, code=400):
-    """Render message as an apology to user."""
+    """Render error message to user."""
     def escape(s):
         """
         Escape special characters.
-
         https://github.com/jacebrowning/memegen#special-characters
         """
         for old, new in [("-", "--"), (" ", "-"), ("_", "__"), ("?", "~q"),
@@ -22,7 +20,6 @@ def erro(message, code=400):
 def login_required(f):
     """
     Decorate routes to require login.
-
     http://flask.pocoo.org/docs/1.0/patterns/viewdecorators/
     """
     @wraps(f)
@@ -31,6 +28,3 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
-
-def lookup():
-    """Look up quote for symbol."""

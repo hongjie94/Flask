@@ -5,18 +5,22 @@
 {% endblock %}
 
 {% block main %}
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1 class"wt"><i class="fa fa-user"></i>Register</h1>
-<br>
-
-
-    <form action="/register" method="post">
+<style>
+/* current page bg */
+body {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../static/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* color: #fff; */
+}
+</style>
+<div class="col-md-12 ms-sm-auto col-lg-12 px-md-4"></div>
+  <div class="container login-contanier">
+    <div id="auth">
+      <h1>Register</h1>
+      <form action="/register" method="post">
         <div class="form-group">
             <input id="input_username" autocomplete="off" autofocus class="form-control control" name="username" placeholder="Username" type="text">
         </div>
@@ -26,9 +30,9 @@
         <div class="form-group">
             <input id="input_password" class="form-control control" name="confirmation" placeholder="Confirm Password" type="password">
         </div>
-        <button id="button" class="btn btn-dark b bb" type="submit">Register</button>
+        <button id="button" class="btn btn-dark" type="submit">Register</button>
         <script>
-            //username spaces validaion
+            // void username using spaces
             document.querySelector("#input_username").onkeyup = function() {
                 if (document.querySelector("#input_username").value.trim()==="") {
                     document.querySelector("#button").disabled = true;
@@ -36,8 +40,8 @@
                     document.querySelector("#button").disabled = false;
                 }
             }
-            //password spaces validaion
-             document.querySelector("#input_password").onkeyup = function() {
+            // void password using spaces
+              document.querySelector("#input_password").onkeyup = function() {
                 if (document.querySelector("#input_password").value.trim()==="") {
                     document.querySelector("#button").disabled = true;
                 } else {
@@ -45,5 +49,8 @@
                 }
             }
         </script>
-    </form>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}

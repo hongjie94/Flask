@@ -5,20 +5,35 @@
 {% endblock %}
 
 {% block main %}
-<br>
-<br>
-<br>
-<br>
-    <h1>Your Business<br>Perfect Solutions </h1>
-    <br>
-
-    <form action="/login" method="post">
-        <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control control" name="username" placeholder="Username" type="text">
-        </div>
-        <div class="form-group">
-            <input class="form-control control" name="password" placeholder="Password" type="password">
-        </div>
-        <button class="btn btn-dark b bb" type="submit">Log In</button>
-    </form>
+<style>
+/* current page bg */
+body {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../static/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* color: #fff; */
+}
+</style>
+<div class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+  <div class="container login-contanier">
+    <div id="auth">
+      <h1>
+        Your Business<br>
+        Perfect Solutions 
+      </h1>
+      <form action="/login" method="post">
+          <div class="form-group">
+              <input autocomplete="off" autofocus class="form-control control" name="username" placeholder="Username" type="text">
+          </div>
+          <div class="form-group">
+              <input class="form-control control" name="password" placeholder="Password" type="password">
+          </div>
+          <button class="btn btn-dark" type="submit">Log In</button>
+          <div class="newUser"> Dont have an account <a href="/register">Register</a> here.</div>
+      </form>
+    </div>
+  </div>  
+</div>  
 {% endblock %}
