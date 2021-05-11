@@ -21,6 +21,34 @@ main {
   display: contents;
 }
 
+/*
+* Erro page
+*/
+
+.erroAlert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.erroAlert > div {
+  margin: 2em;
+  width: max-content;
+}
+
+.erroAlert > h1, p {
+  color: #fff
+}
+
+.erroAlert > h1{
+  font-size: 7em;
+}
+
+.erroAlert > p{
+  font-size: 2em;
+}
 
 /*
 * Navbar
@@ -52,6 +80,7 @@ main {
   height: max-content;
 }
 
+
 .form-control-dark {
   color: #fff;
   background-color: rgba(255, 255, 255, .1);
@@ -67,6 +96,10 @@ main {
   display: inline;
   margin: auto 1em;
   font-size: 1em;
+}
+.route {
+  display: flex;
+  width: 100%;
 }
 
 /*
@@ -122,8 +155,24 @@ main {
   padding: .5em;
   min-width: 7em;
 }
+.AlertParent {
+  display: flex;
+}
+/*
+* Froms
+*/
 
+.myFroms { 
+  margin-bottom: 7em !important;
+}
 
+.inptmw {
+  min-width: 15em !important;
+}
+
+.nodata > p{
+  color: #212529;
+}
 
 /*
 * Sidebar
@@ -167,6 +216,9 @@ main {
     .navbar {
       justify-content: flex-end;
     }
+    .route {
+      width: 77%;
+    }
 }
 
 .sidebar-sticky {
@@ -201,7 +253,6 @@ main {
   font-size: .75rem;
   text-transform: uppercase;
 }
-
 
 /*
 * footer

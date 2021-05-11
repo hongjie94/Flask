@@ -8,49 +8,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/styles.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <title>RE Clients Management | {% block title %}{% endblock %}</title>
   </head>
   <body>
-    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand nvbar" tpye ="submit" href="/"><h1>C</h1><span> -Management</span> </a>
-            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                   {% if session.user_id %}
-                   <div class="collapse navbar-collapse scrollmenu" id="navbar">
-                    <ul class="navbar navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/search">
-                            <i class="fa fa-fw fa-search"></i> Search</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="/add"><i class='fas fa-user-plus'></i>Add</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/delete"><i class="fa fa-user-times"></i>Delete</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/update"><i class='fas fa-edit'></i>Update</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/confirmed_appointments"><i class='fas fa-business-time'></i>Appointments</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/appointment"><i class='fas fa-calendar-alt'></i> Schedule</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/cancel_appts"> <i class='fas fa-calendar-times'></i> Cancel</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/history"><i class="fa fa-history"></i></i>History</a></li>
-                    </ul>
-                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="/logout"><i class='fas fa-sign-out-alt'></i>Log Out</a></li>
-                    </ul>
-                {% else %}
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="/login"><i class='fas fa-sign-in-alt'></i>Log In</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/register"><i class="fa fa-user"></i>Register</a></li>
-                    </ul>
-                {% endif %}
-            </div>
-        </nav> -->
-       
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/"> <span data-feather="home"></span>RE.C Management</a>
         {% if session.user_id %}
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+      <div class="route">
+        <ul class="navbar-nav px-5">
+          <li class="nav-item text-nowrap">
+          <a class="nav-link" href="/">
+            <span data-feather="users"></span>
+            Clients
+          </a>
+        </li>
+        </ul>
+        <ul class="navbar-nav px-5">
+          <li class="nav-item text-nowrap">
+          <a class="nav-link" href="/confirmed_appointments">
+            <span data-feather="user-check"></span>
+            Appointments
+          </a>
+        </li>
+        </ul>
+      </div>
         <ul class="navbar-nav px-3">
           <li class="nav-item text-nowrap">
             <a class="nav-link" href="/logout">Sign out</a>
@@ -69,14 +56,11 @@
     <div class="container-fluid">
         <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-          <div class="position-sticky pt-3">
+          <div class="position-sticky pt-2">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
-                  <span data-feather="users"></span>
-                  Clients
-                </a>
-              </li>
+              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Clients</span>
+              </h6>
               <li class="nav-item">
                 <a class="nav-link" href="/search">
                   <span data-feather="search"></span>
@@ -101,24 +85,13 @@
                   Update Client Info
                 </a>
               </li>
+              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Appoinments</span>
+              </h6>
               <li class="nav-item">
-                <a class="nav-link" href="/history">
-                  <span data-feather="clock"></span>
-                  Activity
-                </a>
-              </li>
-            </ul>
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Appointments</span>
-              <a class="link-secondary" href="/appointment" aria-label="Add a new appointments">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="/confirmed_appointments">
-                  <span data-feather="check-square"></span>
-                  Confirmed
+                <a class="nav-link" href="/appointment">
+                  <span data-feather="calendar"></span>
+                  Schedule
                 </a>
               </li>
               <li class="nav-item">
@@ -127,18 +100,19 @@
                   Cancel
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/history">
+                  <span data-feather="clock"></span>
+                  Activity
+                </a>
+              </li> 
             </ul>
           </div>
         </nav>
       {% endif %}        
-      {% if get_flashed_messages() %}
-        <div class="alert alert-primary border text-center alert" role="alert">
-            {{ get_flashed_messages() | join(" ") }}
-        </div>
-      {% endif %}
-        <main>
-          {% block main %}{% endblock %}
-        </main>
+      <main>
+        {% block main %}{% endblock %}
+      </main>
       </div>
     </div>  
     <div class=" footer sticky-bottom bg-dark flex-md-nowrap p-3 shadow"> © <span id="year"></span> RE Clients Management. All Rights Reserved</div>

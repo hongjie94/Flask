@@ -35,9 +35,8 @@ db = SQL("sqlite:///client.db")
 def inpt(field):
   """ field require message """
   if not request.form.get(field):
-    return erro(f"Must provide {field}")
-
-
+    return flash(f"Must Provide {field.capitalize()}")
+    
 @app.route("/add", methods=["GET", "POST"])
 @login_required
 def add():
@@ -71,7 +70,7 @@ def add():
       return erro("Client name already exists")
 
     # notifications 
-    flash("Client Added!")
+    flash("New client successfully added!")
 
     # Redirect user to index.html
     return redirect("/")
@@ -120,7 +119,7 @@ def appointment():
           )
 
           # notifications 
-          flash("New Appointment Add!")
+          flash("New appointment successfully added!")
 
           # redirect to confirmed appoinmetns page
           return redirect("/confirmed_appointments")
@@ -199,6 +198,7 @@ def login():
       # Remember which user has logged in
       session["user_id"] = rows[0]["id"]
 
+      flash("Welcome Back")  
       # Redirect user to home page
       return redirect("/")
 
@@ -222,7 +222,7 @@ def logout():
 @login_required
 def search():
   """search client."""
-  
+
   if request.method == "POST":
       inpt_checks = inpt("clientname") and inpt("mobile")
       if inpt_checks != None:
@@ -235,7 +235,7 @@ def search():
           """, user_id=session["user_id"])
 
       for i in clientsdb:
-          if i["clientname"] == request.form.get("clientname") or i["mobile"] == request.form.get("mobile"):
+          if i["clientname"].lower() == request.form.get("clientname").lower() or i["mobile"] == request.form.get("mobile"):
 
               flash("Client Found!")
 
@@ -269,10 +269,7 @@ def register():
           return inpt_checks
 
       if request.form.get("password") != request.form.get("confirmation"):
-
-          flash ("Password not match!")
-
-          return redirect ("/register")
+          return erro("Password not match")
 
 
       try:
@@ -285,8 +282,8 @@ def register():
           return erro("Registration erro")
       session["user_id"] = new_user
 
-      # Alert bar
-      flash("Registered!")
+      # notification
+      flash("You have successfully registered and logged in.")
 
       # Redirect user to index.html
       return redirect("/")
@@ -312,11 +309,7 @@ def cancel_appts():
 
       for i in clientsdb:
           if request.form.get("clientname") == '':
-
-              flash ("Must provide client's name!")
-
-              return redirect ("/cancel_appts")
-
+              return erro("Must provide client's name")
 
           if request.form.get("clientname") == i["clientname"] or request.form.get("mobile") == i["mobile"]:
 
@@ -466,7 +459,7 @@ def update():
           note=note)
 
           # Alert bar display Cash Added!
-          flash("Client Info has been updated!")
+          flash("Client Information has been successfully updated!")
 
           return redirect("/")
 

@@ -18,6 +18,11 @@ body {
 </style>
 <div class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
   <div class="container login-contanier">
+    {% if get_flashed_messages() %}
+    <div class="alert alert-primary border text-center alert" role="alert">
+        {{ get_flashed_messages() | join(" ") }}
+    </div>
+    {% endif %}
     <div id="auth">
       <h1>
         Your Business<br>
