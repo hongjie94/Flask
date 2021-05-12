@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block main %}
-<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">	
+<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mb-5">	
 <h2 class="head-sub py-2 border-bottom">Update Client's Informations</h2>
  <form action="/update" method="post">
     <div class="row mb-3">
-        <div class="col-md-3 mb-3">
+        <div class="col-md-4 col-lg-3 mb-3">
           <label for="name" class="form-label">Name</label>
           <input 
             type="text"
@@ -22,7 +22,7 @@
           >
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4 col-lg-3 mb-3">
           <label for="Email" class="form-label">Email</label>
           <input 
             name="clientemail" 
@@ -32,7 +32,7 @@
             id="Email"  
           >
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-4 col-lg-3 mb-3">
           <label for="Mobile" class="form-label">Mobile</label>
           <input
             name="mobile" 
@@ -45,7 +45,7 @@
       </div>
 
       <div class="row mb-3 ">
-        <div class="col-md-3">
+        <div class="col-md-4 col-lg-3 mb-3">
           <label for="occupation" class="form-label">Occupation</label>
           <input type="text" 
             name="note" 
@@ -54,7 +54,7 @@
             id="occupation"  
           >
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-4 col-lg-3 mb-4">
           <label for="budget" class="form-label">Budget</label>
           <div class="input-group">
             <span class="input-group-text">$</span>
@@ -69,7 +69,7 @@
             <span class="input-group-text">.00</span>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4 col-lg-3">
           <label for="Guarantors" class="form-label">Required Guarantors?</label>
             <div class="row">
               <select 
@@ -85,7 +85,7 @@
       </div>
 
       <div class="row mb-3">
-        <div class="col-md-3">
+        <div class="col-md-4 col-lg-3 mb-2">
           <label for="size" class="form-label row ml-0">Bedrooms</label>
           <select 
             class="form-select form-select-lg mb-3 p-2 px-5"
@@ -99,7 +99,7 @@
             <option value="4BR">4BR+</option>
           </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4 col-lg-3 mb-2">
           <label for="Pets" class="form-label">Pets</label>
           <input type="text" 
             name="pets"
@@ -111,7 +111,7 @@
       </div>
       
       <div class="row mb-3">
-        <div class="col-md-3">
+        <div class="col-md-4 col-lg-3 mb-3">
           <label for="area" class="form-label row ml-0">Neighborhoods</label>
           <select 
             class="form-select form-select-lg mb-3 p-2 px-5"
@@ -122,7 +122,7 @@
             <option value="EAST">EAST</option>
           </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4 col-lg-3 mb-3">
           <label for="Pets" class="form-label">How Far Up/Down</label>
           <input 
             name="area" 
@@ -133,7 +133,7 @@
       </div>
 
       <div class="row mb-5">
-        <div class="col-md-3 mb-3">
+        <div class="col-md-5 col-lg-3 mb-3">
           <label for="name" class="form-label">Move Date</label>
           <input 
             type="date" 
@@ -143,7 +143,7 @@
             >
         </div>
       </div>
-        <button class="btn btn-dark px-5" type="submit">Update Client Info</button>
+        <button class="btn btn-dark px-5 mb-5" type="submit">Update Client Info</button>
     </form>
 </div>    
 {% endblock %}

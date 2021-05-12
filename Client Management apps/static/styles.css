@@ -1,11 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  /* background: url(../static/bg.jpg) no-repeat center center fixed;  */
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
-  /* color: #fff; */
   margin: 0;
   font-family: var(--bs-font-sans-serif);
   font-size: .875rem;
@@ -19,12 +16,25 @@ body {
 
 main {
   display: contents;
+  animation: transitionIn 1s;
 }
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
 
 /*
 * Erro page
 */
-
 .erroAlert {
   display: flex;
   justify-content: center;
@@ -32,20 +42,16 @@ main {
   flex-direction: column;
   height: 70vh;
 }
-
 .erroAlert > div {
   margin: 2em;
   width: max-content;
 }
-
 .erroAlert > h1, p {
   color: #fff
 }
-
 .erroAlert > h1{
   font-size: 7em;
 }
-
 .erroAlert > p{
   font-size: 2em;
 }
@@ -53,7 +59,6 @@ main {
 /*
 * Navbar
 */
-
 .navbar-brand {
   padding: .75rem 0;
   font-size: 1rem;
@@ -62,36 +67,29 @@ main {
   background-color: rgba(0, 0, 0, .25);
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
 }
-
 .navbar-brand > svg {
   height: 22px !important;
   margin: 0 1px;
 }
-
 .navbar .navbar-toggler {
   top: .25rem;
   right: 1rem;
 }
-
 .navbar .form-control {
   padding: .75rem 1rem;
   border-width: 0;
   border-radius: 0;
   height: max-content;
 }
-
-
 .form-control-dark {
   color: #fff;
   background-color: rgba(255, 255, 255, .1);
   border-color: rgba(255, 255, 255, .1);
 }
-
 .form-control-dark:focus {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
-
 .nav-auth > a {
   display: inline;
   margin: auto 1em;
@@ -105,7 +103,6 @@ main {
 /*
 * Login and register page
 */
-
 #auth {
   max-width: 30em;
   display: flex;
@@ -131,10 +128,9 @@ main {
 }
 
 #auth > form > button {
-    margin: .5em 0;
-    min-width: 20em;
+  margin: .5em 0;
+  min-width: 20em;
 }
-
 #auth > form > .newUser {
   color: #fff;
   font-size: 16px;
@@ -150,26 +146,33 @@ main {
  /*
 * tables
 */
-
- .table-sm td, .table-sm th {
+.table-sm td, .table-sm th {
   padding: .5em;
   min-width: 7em;
 }
+
+ /*
+* Alert bar
+*/
 .AlertParent {
   display: flex;
 }
+
 /*
 * Froms
 */
-
 .myFroms { 
   margin-bottom: 7em !important;
 }
-
+label {
+  min-width: 140px;
+}
+.input-group {
+  min-width: 168px;
+}
 .inptmw {
   min-width: 15em !important;
 }
-
 .nodata > p{
   color: #212529;
 }
@@ -177,27 +180,6 @@ main {
 /*
 * Sidebar
 */
-
-.feather {
-  width: 16px;
-  height: 16px;
-  vertical-align: text-bottom;
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-      font-size: 4rem;
-  }
-}
-
 .sidebar {
   position: relative;
   top: 0;
@@ -209,18 +191,14 @@ main {
   height: 100vh;
 }
 
-@media (max-width: 767.98px) {
-    .sidebar {
-        top: 5rem;
-    }
-    .navbar {
-      justify-content: flex-end;
-    }
-    .route {
-      width: 77%;
-    }
+#clock, #date  {
+  padding-left: 1em;
+  font-size: 1.2em;
 }
 
+#date {
+  display: block;
+}
 .sidebar-sticky {
   position: relative;
   top: 0;
@@ -229,35 +207,53 @@ main {
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
-
 .sidebar .nav-link {
   font-weight: 500;
   color: #333;
 }
-
 .sidebar .nav-link .feather {
   margin-right: 4px;
   color: #727272;
 }
-
 .sidebar .nav-link.active {
   color: #007bff;
 }
-
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
   color: inherit;
 }
-
 .sidebar-heading {
   font-size: .75rem;
   text-transform: uppercase;
 }
+@media (max-width: 767.98px) {
+  .collapse:not(.show) {
+    display: none;
+  }
+  .sidebar {
+    height: 80vh;
+  }
+  .navbar {
+    justify-content: flex-end;
+  }
+  .route {
+    width: 77%;
+  }
+}
+
+/*
+* icons
+*/
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
 
 /*
 * footer
 */
-
 .footer {
   position: fixed;
   left: 0;
